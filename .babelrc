@@ -1,0 +1,20 @@
+{
+    "plugins": [
+      ["module-resolver", {
+        "root": ["./src/"],
+        "alias": {
+          "@api": "./src/apis",
+          "@component": "./src/components",
+          "@navigation": "./src/navigations",
+          "@helper": "./src/helpers",
+          "@image": "./src/images",
+          "@service": "./src/services",
+          "@store": "./src/stores",
+          "@style": "./src/styles",
+          "@util": "./src/utils",
+          "@validation": "./src/validations"
+        }
+      }]
+    ]
+}
+  
