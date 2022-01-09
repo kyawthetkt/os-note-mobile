@@ -5,11 +5,17 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     padding: 0,
-    marginBottom: 50,
+    marginBottom: 60,
     backgroundColor: '#FFFFFF',
   },
   whiteBg: {
     backgroundColor: '#FFFFFF',
+    color: '#000000',
+  },
+  textAreaWhiteBg: {
+    backgroundColor: '#FFFFFF',
+    color: '#000000',
+    height: 80,
   },
   greyBg: {
     backgroundColor: '#333333',
@@ -29,6 +35,9 @@ export default StyleSheet.create({
   textLeft: {
     textAlign: 'left',
     backgroundColor: 'red',
+  },
+  lableColor: {
+    color: '#000000',
   },
    
 });

@@ -5,7 +5,9 @@ import {FAB, Portal, Provider, Paragraph, List} from 'react-native-paper';
 import FastImage from 'react-native-fast-image';
 import {formtDate} from '@helper/date';
 
-import style from '@style/order.detail';
+// Later to remove
+import {orderLabelGrp} from '@util/order.label';
+
 const SubOrderItem = ({item}) => {
   return (
     <List.Item
@@ -14,8 +16,12 @@ const SubOrderItem = ({item}) => {
       })`}
       description={() => (
         <View>
-          <Text>Quantity: {item.quantity}</Text>
-          <Text>Sub Total Amount: {item.sub_total_price}</Text>
+          <Text>
+            {orderLabelGrp.quantity}: {item.quantity}
+          </Text>
+          <Text>
+            {orderLabelGrp.subTotalAmount}: {item.sub_total_price}
+          </Text>
         </View>
       )}
       left={props => <List.Icon {...props} icon="square" />}
@@ -71,24 +77,6 @@ export default ({id}) => {
     ],
   };
 
-  const orderDetailLabel = {
-    shopName: 'Shop Name',
-    shopDescription: 'Shop Description ',
-    customerName: 'Customer Name ',
-    customerPhone: 'Customer Phone ',
-    customerAddress: 'Customer Address ',
-    orderedDate: 'Ordered Date ',
-    deliveredDate: 'Delivered Date ',
-    completeDate: 'Complete Date ',
-    deliveryType: 'Delivered By ',
-    deliveryFee: 'Delivery Fee',
-    remark: 'Remak',
-    files: 'Attched Files',
-    voucher: 'Voucher',
-
-    editOrderLabel: 'Edit Order',
-  };
-
   useEffect(() => {
     navigation.setOptions({
       title: data.customer_name || 'Loading...',
@@ -102,41 +90,41 @@ export default ({id}) => {
           <View style={[style.itemsWrapper]}>
             <View style={style.itemWrapper}>
               <Text style={style.labelIndex}>
-                {orderDetailLabel.shopName}:
+                {orderLabelGrp.shopName}:
                 <Text style={style.labelValue}>{data.shop_name}</Text>
               </Text>
               <Text style={style.labelIndex}>
-                {orderDetailLabel.shopDescription}:
+                {orderLabelGrp.shopDescription}:
                 <Text style={style.labelValue}>{data.shop_description}</Text>
               </Text>
             </View>
 
             <View style={style.itemWrapper}>
               <Text style={style.labelIndex}>
-                {orderDetailLabel.customerPhone}:
+                {orderLabelGrp.customerPhone}:
                 <Text style={style.labelValue}>{data.customer_phone}</Text>
               </Text>
               <Text style={style.labelIndex}>
-                {orderDetailLabel.customerAddress}:
+                {orderLabelGrp.customerAddress}:
                 <Text style={style.labelValue}>{data.customer_address}</Text>
               </Text>
             </View>
 
             <View style={style.itemWrapper}>
               <Text style={style.labelIndex}>
-                {orderDetailLabel.orderedDate}:
+                {orderLabelGrp.orderedDate}:
                 <Text style={style.labelValue}>
                   {formtDate(data.ordered_at)}
                 </Text>
               </Text>
               <Text style={style.labelIndex}>
-                {orderDetailLabel.deliveredDate}:
+                {orderLabelGrp.deliveredDate}:
                 <Text style={style.labelValue}>
                   {formtDate(data.delivered_at)}
                 </Text>
               </Text>
               <Text style={style.labelIndex}>
-                {orderDetailLabel.completeDate}:
+                {orderLabelGrp.completeDate}:
                 <Text style={style.labelValue}>
                   {formtDate(data.complete_at)}
                 </Text>
@@ -145,19 +133,19 @@ export default ({id}) => {
 
             <View style={style.itemWrapper}>
               <Text style={style.labelIndex}>
-                {orderDetailLabel.deliveryType}:
+                {orderLabelGrp.deliveryType}:
                 <Text style={style.labelValue}>{data.delivery_type}</Text>
               </Text>
               <Text style={style.labelIndex}>
-                {orderDetailLabel.deliveryFee}:
+                {orderLabelGrp.deliveryFee}:
                 <Text style={style.labelValue}>{data.delivery_fee}</Text>
               </Text>
               <Text style={style.labelIndex}>
-                {orderDetailLabel.remark}: <Paragraph>{data.remark}</Paragraph>
+                {orderLabelGrp.remark}: <Paragraph>{data.remark}</Paragraph>
               </Text>
             </View>
             <View style={style.itemWrapper}>
-              <Text style={style.labelValue}>{orderDetailLabel.files}</Text>
+              <Text style={style.labelValue}>{orderLabelGrp.files}</Text>
               {data.orderDetail.map(item => (
                 <SubOrderItem key={item.id} item={item} />
               ))}
@@ -166,7 +154,7 @@ export default ({id}) => {
             <View style={style.itemWrapper}>
               <FastImage
                 style={{
-                  width: "100%",
+                  width: '100%',
                   height: 230,
                 }}
                 source={{
@@ -187,14 +175,14 @@ export default ({id}) => {
           actions={[
             {
               icon: 'square-edit-outline',
-              label: orderDetailLabel.editOrderLabel,
+              label: orderLabelGrp.editOrderLabel,
               onPress: () => {
                 navigation.navigate('UpdatePasswordScreen');
               },
             },
             {
               icon: 'file-download',
-              label: orderDetailLabel.voucher,
+              label: orderLabelGrp.voucher,
               onPress: () => {
                 navigation.navigate('UpdatePasswordScreen');
               },

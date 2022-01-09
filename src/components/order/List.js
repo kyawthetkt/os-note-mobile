@@ -5,22 +5,21 @@ import {formtDate} from '@helper/date';
 import {useNavigation} from '@react-navigation/native';
 import style from '@style/order.list';
 
+// Later to remove
+import {orderLabelGrp} from '@util/order.label';
+
 const OrderItem = ({item, onPress}) => {
-
-  const orderItemLabel = {
-    orderDate: 'Order Dates',
-    totalAmount: 'Total Amounts',
-  };
-
   return (
     <List.Item
       onPress={() => onPress(item.id)}
       title={`${item.customer_name} - ${item.customer_phone}`}
       description={() => (
         <View>
-          <Text>{orderItemLabel.orderDate}: {formtDate(item.ordered_at)}</Text>
           <Text>
-          {orderItemLabel.totalAmount}:{' '}
+            {orderLabelGrp.orderDate}: {formtDate(item.ordered_at)}
+          </Text>
+          <Text>
+            {orderLabelGrp.totalAmount}:{' '}
             {item.orderDetail.reduce(
               (sum, obj) => sum + obj.sub_total_price,
               0,
@@ -70,10 +69,6 @@ export default () => {
     },
   ];
 
-  const orderListLabel = {
-    createNewOrder: 'Create New Order', 
-  };
-
   const viewOrder = orderId => {
     navigation.navigate('OrderDetail', {id: orderId});
   };
@@ -94,7 +89,7 @@ export default () => {
           actions={[
             {
               icon: 'card-plus',
-              label: `${orderListLabel.createNewOrder}`,
+              label: `${orderLabelGrp.createNewOrder}`,
               onPress: () => {
                 navigation.navigate('OrderCreate');
               },

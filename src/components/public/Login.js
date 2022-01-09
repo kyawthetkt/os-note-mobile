@@ -74,7 +74,8 @@ export default () => {
                   onChangeText={handleChange('password')}
                   onBlur={handleBlur('password')}
                   value={values.password} 
-                  secureTextEntry={true}
+                  secureTextEntry={true} 
+                  right={<TextInput.Icon name="eye" />}
                 />
                 {errors.password && (
                   <Text style={style.errorMsg}>{errors.password}</Text>

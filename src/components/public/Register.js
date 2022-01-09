@@ -131,7 +131,8 @@ export default () => {
                 onChangeText={handleChange('password')}
                 onBlur={handleBlur('password')}
                 value={values.password}
-                secureTextEntry={true}
+                secureTextEntry={true} 
+                right={<TextInput.Icon name="eye" />}
               />
               {errors.password && (
                 <Text style={style.errorMsg}>{errors.password}</Text>
@@ -147,7 +148,8 @@ export default () => {
                 onChangeText={handleChange('confirm_password')}
                 onBlur={handleBlur('confirm_password')}
                 value={values.confirm_password}
-                secureTextEntry={true}
+                secureTextEntry={true} 
+                right={<TextInput.Icon name="eye" />}
               />
               {errors.confirm_password && (
                 <Text style={style.errorMsg}>{errors.confirm_password}</Text>
