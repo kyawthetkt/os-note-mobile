@@ -1,14 +1,16 @@
 import * as Yup from 'yup';
-
-const required = 'ဖြည့်ရန်လိုအပ်ပါသည်';
-const numberOnly = 'နံပါတ်သာ';
+import {validationLabelGrp} from '@label';
 
 export default Yup.object().shape({
-  name: Yup.string().required(required),
+  name: Yup.string().required(validationLabelGrp.required),
   size: Yup.string(),
   color: Yup.string(),
-  quantity: Yup.number().typeError(numberOnly).required(required),
-  sub_total_price: Yup.number().typeError(numberOnly).required(required),
+  quantity: Yup.string()
+    // .typeError(validationLabelGrp.numberOnly)
+    .required(validationLabelGrp.required),
+  sub_total_price: Yup.string()
+    // .typeError(validationLabelGrp.numberOnly)
+    .required(validationLabelGrp.required),
   // shop_name: Yup.string().required(required),
   // customer_name: Yup.string().required(required),
 

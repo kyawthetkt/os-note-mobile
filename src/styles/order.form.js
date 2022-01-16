@@ -1,11 +1,10 @@
-/* eslint-disable quotes */
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
     padding: 0,
-    marginBottom: 60,
+    marginBottom: 50,
     backgroundColor: '#FFFFFF',
   },
   whiteBg: {
@@ -31,13 +30,23 @@ export default StyleSheet.create({
   errorMsg: {
     color: 'red',
   },
- 
+  pleaseWait: {
+    textAlign: 'center',
+    color: '#000000',
+  },
   textLeft: {
     textAlign: 'left',
     backgroundColor: 'red',
   },
+  labelColor: {
+    color: '#000000',
+  },
   lableColor: {
     color: '#000000',
   },
-   
+  detailButtonWrapper: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
 });

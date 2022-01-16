@@ -6,6 +6,7 @@ export default () => {
     <ScrollView>
       <View>
         <Text>This is home!</Text>
+      </View>
     </ScrollView>
   );
 };

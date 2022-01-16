@@ -30,4 +30,11 @@ export default StyleSheet.create({
   fabDesign: {
     marginBottom: 50,
   },
+  emptyOrderDetailText: {
+    color: '#000000',
+    textAlign: 'center',
+    fontSize: 17,
+    fontWeight: 'bold',
+    marginTop: 10,
+  },
 });

@@ -38,14 +38,16 @@ export default StyleSheet.create({
     marginBottom: 30,
   },
   registrationText: {
+    color: '#000000',
     fontSize: 17,
     textAlign: 'center',
   },
   createAccountText: {
+    color: '#000000',
     fontSize: 15,
     textAlign: 'center',
   },
   errorMsg: {
-    color: "red",
+    color: 'red',
   },
 });

@@ -12,7 +12,9 @@
           "@store": "./src/stores",
           "@style": "./src/styles",
           "@util": "./src/utils",
-          "@validation": "./src/validations"
+          "@label": "./src/labels",
+          "@validation": "./src/validations",
+          "@hook": "./src/hooks"
         }
       }]
     ]

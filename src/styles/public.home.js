@@ -2,9 +2,15 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
     padding: 0,
     marginBottom: 50,
-    backgroundColor: 'tan',
+    backgroundColor: '#FFFFFF',
+  },
+  imageWrapper: {
+    backgroundColor: '#FFFFFF',
+    height: 340,
+    width: '100%',
+    resizeMode: 'cover',
+    margin: 0,
   },
 });

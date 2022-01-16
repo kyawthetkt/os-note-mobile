@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
@@ -13,7 +12,7 @@ export default StyleSheet.create({
   },
   greyBg: {
     backgroundColor: '#333333',
-  }, 
+  },
   inputWrapper: {
     marginTop: 20,
     paddingHorizontal: 15,
@@ -25,10 +24,9 @@ export default StyleSheet.create({
   errorMsg: {
     color: 'red',
   },
- 
+
   textLeft: {
     textAlign: 'left',
     backgroundColor: 'red',
   },
-   
 });
